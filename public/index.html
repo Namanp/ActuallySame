@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Texas Hold'em Night</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <div>
+          <h1>Texas Hold'em Night</h1>
+          <p>Host a quick online poker night with your friends.</p>
+        </div>
+        <div class="status" id="connectionStatus">Disconnected</div>
+      </header>
+
+      <section class="join">
+        <div>
+          <label for="playerName">Name</label>
+          <input id="playerName" type="text" placeholder="Your name" />
+        </div>
+        <div>
+          <label for="roomCode">Room code</label>
+          <input id="roomCode" type="text" placeholder="ABC123" />
+        </div>
+        <button id="joinRoom">Join table</button>
+        <p class="hint">Share the room code with friends so everyone joins the same table.</p>
+      </section>
+
+      <section class="table">
+        <div class="table-header">
+          <div>
+            <h2>Table</h2>
+            <p id="tableStatus">Waiting for players</p>
+          </div>
+          <div class="actions">
+            <button id="startHand" disabled>Start hand</button>
+            <button id="advanceBoard" disabled>Deal next card</button>
+            <button id="resetTable" disabled>Reset</button>
+          </div>
+        </div>
+
+        <div class="board">
+          <h3>Community cards</h3>
+          <div class="cards" id="boardCards"></div>
+        </div>
+
+        <div class="players">
+          <h3>Players</h3>
+          <div id="playersList" class="player-list"></div>
+        </div>
+      </section>
+
+      <section class="hand">
+        <h3>Your hand</h3>
+        <div class="cards" id="handCards"></div>
+        <p class="hint">Only you can see your cards on this device.</p>
+      </section>
+
+      <section class="log">
+        <h3>Table log</h3>
+        <ul id="logList"></ul>
+      </section>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>
