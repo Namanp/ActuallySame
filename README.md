@@ -1,11 +1,13 @@
 # Texas Hold'em Night
 
-A lightweight multiplayer Texas Hold'em room powered by Express + Socket.IO. Spin it up, share a room code, and deal cards together in real time.
+A lightweight multiplayer Texas Hold'em room powered by Express + Socket.IO. Create a table with blinds and buy-in limits, then share the room code to bring friends in.
 
 ## Features
-- Create/join a room with a short code.
-- Host controls the hand: deal, advance the board, reset.
-- Each player sees only their own hole cards.
+- Create a table with min/max buy-in and blinds (up to 9 players).
+- Each player chooses their starting stack within the table limits.
+- All connected players must ready up before the host can deal.
+- Dealer, small blind, and big blind positions rotate each hand.
+- Betting actions support check, call, fold, and raise with minimum raise rules.
 
 ## Getting started
 
@@ -14,4 +16,4 @@ npm install
 npm start
 ```
 
-Visit `http://localhost:3000` and have friends join with the same room code.
+Visit `http://localhost:3000`, create a table, and share the room code with friends.
